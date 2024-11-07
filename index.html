@@ -247,6 +247,19 @@
       gtag('js', new Date());
     
       gtag('config', 'G-T9GPTNZ7VV');
+
+	    // Listen for messages from the iframe
+window.addEventListener("message", function(event) {
+    // Optional: Add security check for event.origin
+    if (event.data && event.data.type === 'gtag') {
+        // Call gtag with the arguments from the iframe message
+        gtag('event', event.data.event, {
+            'event_category': event.data.category,
+            'event_label': event.data.label,
+            'value': event.data.value
+        });
+    }
+});
     </script>
 	    
     </head>
