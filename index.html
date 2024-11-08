@@ -256,6 +256,7 @@ window.addEventListener("message", function(event) {
         gtag('event', event.data.event, {
             'event_category': event.data.category,
             'event_label': event.data.label,
+	    'event_sessioniddata': event.data.sessionId,
             'value': event.data.value
         });
     }
