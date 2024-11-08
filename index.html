@@ -255,7 +255,7 @@ window.addEventListener("message", function(event) {
         // Call gtag with the arguments from the iframe message
         gtag('event', event.data.event, {
             'event_category': event.data.category,
-            'event_label': event.data.label
+            'event_label': event.data.label,
             'value': event.data.value
         });
     }
